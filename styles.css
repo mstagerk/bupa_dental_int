@@ -455,6 +455,106 @@ body {
     font-weight: bold;
 }
 
+/* PDF Info Section */
+.pdf-info {
+    background: white;
+    padding: 6rem 0;
+}
+
+.pdf-content {
+    padding-right: 2rem;
+}
+
+.pdf-features {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pdf-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.pdf-feature-item:hover {
+    transform: translateX(5px);
+    background: var(--gradient);
+    color: white;
+}
+
+.pdf-feature-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.pdf-feature-item:hover i {
+    color: white;
+}
+
+.pdf-preview-wrapper {
+    position: relative;
+    perspective: 1000px;
+}
+
+.pdf-preview-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: rotateY(-8deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+}
+
+.pdf-preview-image:hover {
+    transform: rotateY(-4deg) rotateX(2deg);
+}
+
+.pdf-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 121, 200, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 2;
+}
+
+.pdf-badge i {
+    font-size: 1.5rem;
+}
+
+/* PDF Modal */
+.modal-content {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--gradient);
+    color: white;
+    border: none;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.pdf-iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+}
+
 /* CTA Section */
 .cta {
     background: var(--gradient);
@@ -602,6 +702,16 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
+    .pdf-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .pdf-feature-item {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -625,7 +735,11 @@ body {
         right: 10px;
     }
 
-    .benefits, .coverage, .cta {
+    .benefits, .coverage, .cta, .pdf-info {
         padding: 4rem 0;
+    }
+
+    .pdf-iframe {
+        height: 60vh;
     }
 }
